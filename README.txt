@@ -30,6 +30,10 @@ END
 GO
 //
 
+Default JSON parameter untuk procedure save
+{UserID:'$USERNAME'}
+
+
 // Sample combobox datasource
 
 HTML
