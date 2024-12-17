@@ -4,6 +4,7 @@ Akun login = username: asan,
 default password setelah buat akun user baru = password
 
 // SQL Create Karyawan 
+
 CREATE TABLE karyawan (
     karyawan_id INT PRIMARY KEY ,
     nama NVARCHAR(100),
@@ -30,7 +31,9 @@ GO
 //
 
 // Sample combobox datasource
+
 HTML
+
   <div class="form-group"> 
      <label for="Vendor_ID" class="col-sm-2 col-xs-12 control-label">{{formLabel.Vendor_ID}}</label> 
      <div class="col-sm-4 col-xs-12"> 
@@ -40,6 +43,7 @@ HTML
 //
 
 JS
+
    $scope.cboVendor = {
       placeholder: "Pilih Vendor",
       dataTextField: "text",
@@ -63,6 +67,7 @@ JS
 // Radio Button 
 
 HTML
+
  <div class="form-group"> 
      <label for="JENIS_KELAMIN" class="col-sm-2 col-xs-12 control-label">{{formLabel.JENIS_KELAMIN}} <b style="color:red;font-size:20px">*</b></label> 
      <div class="col-sm-3 col-xs-12"> 
@@ -81,6 +86,7 @@ HTML
 
 
 // kendo-date-picker HTML
+
   <div class="form-group">
       <label for="CreateDate" ng-show="isExpired" class="col-sm-2 col-xs-12 control-label">Create Date</label>
       <div class="col-sm-3 col-xs-12">
