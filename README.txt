@@ -179,3 +179,30 @@ BEGIN
         (@Search = '' OR Location.Location_Name LIKE '%' + @Search + '%') OR
         (@Search = '' OR Asset_Type.Asset_Type_Name LIKE '%' + @Search + '%')
 END
+
+
+/// tombol untuk print by paarameter id tambahkan di js
+lalu ganti column berikut dibagian  $scope.GridOptions dibaawah menjadi ;
+
+columns: [defaultActionButtonStatusprint(),
+
+column itu memanggil button yang ada di globalfn app, pastikaan kasih akses preview di bagiana role management tambahkana preview yanag seblumnya anda
+menambahkana add,save,update,delete,list
+
+     $scope.grid_print = function(e) {
+                 var id=e.dataItem.Asset_ID;
+                  console.log(id)
+                 var url = baseAddress + "app/createreport";
+                  var param = {
+                      ReportId: 'assets_management/AssetsDetail.trdx',
+                    Parameters: '{Asset_ID:"' + id + '"}'
+                  }
+                  var paramCaption="CETAK DATA Asset Detail";
+            
+                    $http.post(url, param).then(function(response) {
+                        if (response.data.success == true) {
+                            var link = rptUrl + response.data.data;
+                            openWindow(link, paramCaption)
+                        }
+                    });
+            }
